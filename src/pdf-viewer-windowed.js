@@ -24,18 +24,23 @@ export const PdfViewerWindowed = (props) => {
       }}>
       <div style={{ flex: 1, overflow: 'hidden' }}>
         <PdfViewerWindowProvider>
-          <PdfViewer
-            height={'100%'}
-            blob={blob}
-            base64={base64}
-            settings={settings}
-            setLoading={setLoadingWindow}
-            theme={theme}
-            setRecordingLabels={setRecordingLabels}
-            popin={popin}
-            popout={popout}
-            viewInNewWindow={true}
-          />
+          <div style={{
+            height: '100vh',
+            width: '100vw'
+          }}>
+            <PdfViewer
+              height={'100%'}
+              blob={blob}
+              base64={base64}
+              settings={settings}
+              setLoading={setLoadingWindow}
+              theme={theme}
+              setRecordingLabels={setRecordingLabels}
+              popin={popin}
+              popout={popout}
+              viewInNewWindow={true}
+            />
+          </div>
         </PdfViewerWindowProvider>
       </div>
       <Backdrop

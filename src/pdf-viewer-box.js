@@ -5,7 +5,6 @@ export const PdfViewerBox = (props) => {
   const {
     viewInNewWindow
   } = usePdfViewerWindow();
-  console.log('PdfViewerBox - viewInNewWindow:', viewInNewWindow);
   const handleBackClick = () => {
     setViewImage(false);
   };
