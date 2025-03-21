@@ -11,7 +11,6 @@ const PdfViewerWindowProvider = ({ children, base64 }) => {
   const [loadingWindow, setLoadingWindow] = useState(false);
   const [features, setFeatures] = useState(null);
   const [newWindow, setNewWindow] = useState(null);
-  //const [base64, setBase64] = useState({ id: '', image: '' });
   const [viewerSettings, setViewerSettings] = useState({});
   const [blob, setBlob] = useState(null);
   const [viewInNewWindow, setViewInNewWindow] = useState(false);
@@ -39,11 +38,9 @@ const PdfViewerWindowProvider = ({ children, base64 }) => {
   }, [features]);
 
   const resetPdfViewerWindowInfo = () => {
-    //uWindow();
     setLoadingWindow(false);
     setImageOpen(false);
     setSavedBase64(null);
-    //setBase64({ id: '', image: '' });
     setViewerSettings({});
     setBlob(null);
     setOnClose(() => () => {});
@@ -149,17 +146,6 @@ const PdfViewerWindowProvider = ({ children, base64 }) => {
     }
     setLoadingWindow(false);
   };
-  // const uWindow = () => {
-  //   var viewerType = window.localStorage.getItem(`viewerType`);
-  //   if (!viewerType) {
-  //     window.localStorage.setItem('viewerType', 'standard');
-  //   }
-  //   if (viewerType === 'window') {
-  //     setViewInNewWindow(true);
-  //   } else {
-  //     setViewInNewWindow(false);
-  //   }
-  // };
 
   const popout = async () => {
     try {
@@ -197,10 +183,8 @@ const PdfViewerWindowProvider = ({ children, base64 }) => {
         recordingLabels,
         openImage,
         resetPdfViewerWindowInfo,
-        //setBase64,
         setViewerSettings,
         setLoadingWindow,
-        //uWindow,
         setOnClose,
         setImageOpen,
         setBlob,

@@ -20,7 +20,6 @@ export const PdfViewer = (props) => {
     if (PSPDFKitRef.current && instanceRef.current) {
       try {
         await PSPDFKitRef.current.unload(container);
-        console.log('Unloaded PSPDFKit instance');
         instanceRef.current = null;
       } catch (error) {
         console.error('Error unloading PSPDFKit:', error);
@@ -46,7 +45,6 @@ export const PdfViewer = (props) => {
 
   const loadPdfViewer = async (container) => {
     if(!container || !base64?.image || isLoadingRef.current) {
-      console.log('Skipping load: no container, no base64, or already loading');
       return;
     }
     isLoadingRef.current = true;
@@ -68,7 +66,6 @@ export const PdfViewer = (props) => {
           ],
           licenseKey: process.env.REACT_APP_PSPDFKIT_KEY,
         });
-        console.log('Loaded PSPDFKit instance');
       }
       catch(e) {
         console.error('Error in useEffect:', e.message, e.stack);
