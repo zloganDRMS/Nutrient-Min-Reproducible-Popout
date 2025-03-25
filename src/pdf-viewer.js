@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState} from 'react';
 import { usePdfViewerWindow } from './use-pdf-viewer-window';
 
 export const PdfViewer = (props) => {
@@ -49,7 +49,7 @@ export const PdfViewer = (props) => {
     }
     isLoadingRef.current = true;
       try {
-        PSPDFKitRef.current = PSPDFKitRef.current || await import('pspdfkit');
+        PSPDFKitRef.current = PSPDFKitRef.current || await import('@nutrient-sdk/viewer');
         await unloadPdfViewer(container);
         instanceRef.current = await PSPDFKitRef.current.load({
           theme: PSPDFKitRef.current.Theme.AUTO,
@@ -65,6 +65,7 @@ export const PdfViewer = (props) => {
             ...makeToolbar(PSPDFKitRef.current.defaultToolbarItems),
           ],
           licenseKey: process.env.REACT_APP_PSPDFKIT_KEY,
+          useIframe: true,
         });
       }
       catch(e) {
