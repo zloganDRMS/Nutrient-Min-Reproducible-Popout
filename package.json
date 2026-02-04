@@ -55,5 +55,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "nth-check": "^2.1.1",
+    "postcss": "^8.5.6",
+    "webpack-dev-server": "^5.2.3",
+    "svgo": "^3.3.2",
+    "bfj": {
+      "jsonpath": "npm:jsonpath-plus@^10.3.0"
+    }
   }
 }
